@@ -1,0 +1,28 @@
+services:
+  employee:
+    image: "mohamedabdallahhamed/employee:v1"
+    container_name: employee
+    ports:
+      - "8080:8080"
+    networks:
+      - gbNetwork
+
+  department:
+    image: "mohamedabdallahhamed/department:v1"
+    container_name: department
+    ports:
+      - "8081:8081"
+    networks:
+      - gbNetwork
+
+  company:
+    image: "mohamedabdallahhamed/company:v1"
+    container_name: company
+    ports:
+      - "8082:8082"
+    networks:
+      - gbNetwork
+  
+networks:
+  gbNetwork:
+    driver: bridge
